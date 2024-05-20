@@ -345,6 +345,28 @@ that are children of an element with the class .mynavbar.
   border: 1px solid white;
 }
 
+footer {
+  padding: 3rem;
+  background-color: var(--pink);
+  color: white;
+}
+
+footer a {
+  color: var(--bg);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+
+footer li {
+  list-style: none;
+  display: inline;
+  margin: 0.5rem;
+}
+
 /* Media Query */
 /* Extra large */
 @media (max-width: 1200px) {
