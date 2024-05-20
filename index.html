@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Wedding Invitation</title>
+    <link rel="icon" href="https://www.svgrepo.com/show/214817/wedding-marry.svg" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
 
     <!-- Google Fonts -->
@@ -179,6 +180,61 @@
     </section>
     <!-- End Info -->
 
+    <!-- Story section -->
+    <section id="story" class="story">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>How Our Love Bloomed</span>
+            <h2>Our Story</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, similique non soluta nulla asperiores voluptatem.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <ul class="timeline">
+              <li>
+                <div class="timeline-image" style="background-image: url(https://picsum.photos/302/302)"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>First meeting</h3>
+                    <span>1 Juni 2000</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, modi autem? Commodi autem quo quia?</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image" style="background-image: url(https://picsum.photos/300/300)"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Get serious</h3>
+                    <span>1 Januari 2005</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto enim eaque obcaecati odit itaque explicabo quisquam quos at.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-image" style="background-image: url(https://picsum.photos/301/301)"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Fiance</h3>
+                    <span>7 November 2009</span>
+                  </div>
+                  <div class="timeline-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, deleniti distinctio. Esse quas sit explicabo corporis magni qui expedita a.</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Story section End -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <!-- Countdown tu set random sahaja -->
@@ -196,6 +252,20 @@
           seconds: { singular: "second", plural: "seconds" },
         },
         plural: true, //use plurals
+      });
+    </script>
+
+    <!-- Solve problem when the website change to mobile screen for NavBar -->
+    <script>
+      const stickyTop = document.querySelector(".sticky-top");
+      const offcanvas = document.querySelector(".offcanvas");
+
+      offcanvas.addEventListener("show.bs.offcanvas", function () {
+        stickyTop.style.overflow = "visible";
+      });
+
+      offcanvas.addEventListener("hidden.bs.offcanvas", function () {
+        stickyTop.style.overflow = "hidden";
       });
     </script>
   </body>
