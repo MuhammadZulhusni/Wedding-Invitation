@@ -235,7 +235,94 @@
     </section>
     <!-- Story section End -->
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>Our Memories</span>
+            <h2>Gallery</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, itaque?</p>
+          </div>
+        </div>
+
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/300/1200/768" data-toggle="lightbox" data-caption="1" data-gallery="mygallery">
+              <img src="https://picsum.photos/id/300/300/400" alt="1" class="img-fluid w-100 rounded" />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/300/1200/768" data-toggle="lightbox" data-caption="2" data-gallery="mygallery">
+              <img src="https://picsum.photos/id/300/300/400" alt="2" class="img-fluid w-100 rounded" />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/301/1200/768" data-toggle="lightbox" data-caption="3" data-gallery="mygallery">
+              <img src="https://picsum.photos/id/301/300/400" alt="3" class="img-fluid w-100 rounded" />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/302/1200/768" data-toggle="lightbox" data-caption="4" data-gallery="mygallery">
+              <img src="https://picsum.photos/id/302/300/400" alt="4" class="img-fluid w-100 rounded" />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/304/1200/768" data-toggle="lightbox" data-caption="5" data-gallery="mygallery">
+              <img src="https://picsum.photos/id/304/300/400" alt="5" class="img-fluid w-100 rounded" />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/305/1200/768" data-toggle="lightbox" data-caption="6" data-gallery="mygallery">
+              <img src="https://picsum.photos/id/305/300/400" alt="6" class="img-fluid w-100 rounded" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Gallery Section End -->
+
+    <!-- Attendance form -->
+    <section id="rsvp" class="rsvp">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2>Confirmation of Attendance</h2>
+            <p>Fill out the form below to confirm attendance.</p>
+          </div>
+        </div>
+        <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST" action="https://script.google.com/macros/s/AKfycbxccgG4ZLJLrIbxq-0r62c_cWDBEIWxwRkNIO3DHLKWkvXyj9ms_ShaBV1cEnOkpZIE/exec" id="my-form">
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="nama" class="form-label">Name</label>
+              <input type="text" class="form-control" id="nama" name="nama" />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="jumlah" class="form-label">Total</label>
+              <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1" value="1" />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="status" class="form-label">Confirm</label>
+              <select name="status" id="status" class="form-select">
+                <option selected>Choose</option>
+                <option value="Hadir">Attend</option>
+                <option value="Tidak Hadir">Absent</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12" style="margin-top: 35px">
+            <button class="btn btn-primary">Send</button>
+          </div>
+        </form>
+    </section>
+    <!-- Attendance form end -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 
     <!-- Countdown tu set random sahaja -->
     <script>
@@ -267,6 +354,26 @@
       offcanvas.addEventListener("hidden.bs.offcanvas", function () {
         stickyTop.style.overflow = "hidden";
       });
+    </script>
+
+    <!-- The user isn't redirected to the webapp after submit form -->
+    <script>
+      window.addEventListener("load", function() {
+        const form = document.getElementById('my-form');
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
+          const data = new FormData(form);
+          const action = e.target.action;
+          fetch(action, {
+            method: 'POST',
+            body: data,
+          })
+          .then(() => {
+            alert("Confirmation was successfully sent!");
+          })
+        });
+      });
+      
     </script>
   </body>
 </html>
