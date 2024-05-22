@@ -1,7 +1,6 @@
 # Wedding Invitation Website
 
-This project is a beautiful, responsive wedding invitation website created using HTML, CSS, JavaScript, and Bootstrap. The website provides information about the wedding event, including a countdown timer, sections about the couple, event details, a gallery, an attendance confirmation form that stores data in Google Sheets, background music, and a comment section.
-
+This project is a beautiful, responsive wedding invitation website created using HTML, CSS, JavaScript, and Bootstrap. The website provides information about the wedding event, including a countdown timer, sections about the couple, event details, a gallery, an attendance confirmation form that stores data in Google Sheets & background music.
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
@@ -14,7 +13,6 @@ This project is a beautiful, responsive wedding invitation website created using
 - **Gallery**: A section to showcase photos.
 - **Confirmation of Attendance Form**: Allows guests to confirm their attendance, with data being stored in Google Sheets.
 - **Background Music**: Adds a romantic ambiance to the website.
-- **Comment Section**: Allows visitors to leave comments.
 
 ## Technologies Used
 - HTML
