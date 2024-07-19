@@ -20,7 +20,7 @@ This project is a beautiful, responsive wedding invitation website created using
 ## Setup Instructions
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/zulhusni2003/Wedding-Invitation.git
+   git clone https://github.com/MuhammadZulhusni/Wedding-Invitation.git
 
 2. **Navigate to the Project Directory**
    ```bash
