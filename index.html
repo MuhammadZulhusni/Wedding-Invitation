@@ -506,16 +506,28 @@
 
     <!-- The user isn't redirected to the webapp after submit form -->
     <script>
+      // Wait until the entire page is fully loaded
       window.addEventListener("load", function () {
+        // Select the form element with the ID "my-form"
         const form = document.getElementById("my-form");
+
+        // Add an event listener for the form's submit event
         form.addEventListener("submit", function (e) {
+          // Prevent the form from submitting the usual way and reloading the page
           e.preventDefault();
+
+          // Collect all form data into a FormData object
           const data = new FormData(form);
+
+          // Get the URL from the form's action attribute
           const action = e.target.action;
+
+          // Send the form data to the server using the fetch API
           fetch(action, {
-            method: "POST",
-            body: data,
+            method: "POST", // Use the POST method for the request
+            body: data, // Send the form data in the request body
           }).then(() => {
+            // Show an alert to the user once the form is successfully submitted
             alert("Confirmation was successfully sent!");
           });
         });
