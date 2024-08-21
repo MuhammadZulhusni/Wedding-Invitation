@@ -443,57 +443,65 @@
       });
     </script>
 
-    <!-- Disable scroll -->
+    <!-- JavaScript to control scroll behavior and audio playback -->
     <script>
+      // Select the root element, the audio icon wrapper, the icon inside the wrapper, and the audio element
       const rootElement = document.querySelector(":root");
       const audioIconWrapper = document.querySelector(".audio-icon-wrapper");
       const audioIcon = document.querySelector(".audio-icon-wrapper i");
       const song = document.querySelector("#song");
-      let isPlaying = false;
+      let isPlaying = false; // Variable to track whether the audio is playing or not
 
+      // Function to disable scrolling
       function disableScroll() {
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
+        // Prevent scrolling by locking the scroll position
         window.onscroll = function () {
           window.scrollTo(scrollTop, scrollLeft);
         };
 
+        // Set the scroll behavior to 'auto' to prevent smooth scrolling during the lock
         rootElement.style.scrollBehavior = "auto";
       }
 
+      // Function to enable scrolling
       function enableScroll() {
-        window.onscroll = function () {};
-        rootElement.style.scrollBehavior = "smooth";
-        // localStorage.setItem('opened', 'true');
-        playAudio();
+        window.onscroll = function () {}; // Unlock scrolling
+        rootElement.style.scrollBehavior = "smooth"; // Re-enable smooth scrolling
+        playAudio(); // Start playing the audio when scrolling is enabled
       }
 
+      // Function to play audio and display the audio icon
       function playAudio() {
-        song.volume = 0.1;
-        audioIconWrapper.style.display = "flex";
-        song.play();
-        isPlaying = true;
+        song.volume = 0.1; // Set the audio volume to 10%
+        audioIconWrapper.style.display = "flex"; // Show the audio icon wrapper
+        song.play(); // Start playing the audio
+        isPlaying = true; // Update the state to indicate audio is playing
       }
 
+      // Toggle audio playback when the audio icon is clicked
       audioIconWrapper.onclick = function () {
         if (isPlaying) {
-          song.pause();
-          audioIcon.classList.remove("bi-disc");
-          audioIcon.classList.add("bi-pause-circle");
+          song.pause(); // Pause the audio if it is playing
+          audioIcon.classList.remove("bi-disc"); // Remove disc icon
+          audioIcon.classList.add("bi-pause-circle"); // Show pause icon
         } else {
-          song.play();
-          audioIcon.classList.add("bi-disc");
-          audioIcon.classList.remove("bi-pause-circle");
+          song.play(); // Play the audio if it is paused
+          audioIcon.classList.add("bi-disc"); // Show disc icon
+          audioIcon.classList.remove("bi-pause-circle"); // Remove pause icon
         }
 
-        isPlaying = !isPlaying;
+        isPlaying = !isPlaying; // Toggle the playing state
       };
 
+      // Uncomment the following lines if you want to disable scroll until the audio starts playing
       // if (!localStorage.getItem('opened')) {
       //   disableScroll();
       // }
-      disableScroll();
+
+      disableScroll(); // Initially disable scrolling
     </script>
 
     <!-- The user isn't redirected to the webapp after submit form -->
