@@ -434,14 +434,21 @@
 
     <!-- Solve problem when the website change to mobile screen for NavBar -->
     <script>
+      // Select elements with the class "sticky-top" and "offcanvas"
       const stickyTop = document.querySelector(".sticky-top");
       const offcanvas = document.querySelector(".offcanvas");
 
+      // Event listener for when the offcanvas is shown
       offcanvas.addEventListener("show.bs.offcanvas", function () {
+        // Change the overflow style of the sticky-top element to 'visible'
+        // This allows the sticky-top content to be fully displayed without being clipped
         stickyTop.style.overflow = "visible";
       });
 
+      // Event listener for when the offcanvas is hidden
       offcanvas.addEventListener("hidden.bs.offcanvas", function () {
+        // Change the overflow style of the sticky-top element to 'hidden'
+        // This prevents the content from overflowing when the offcanvas is hidden
         stickyTop.style.overflow = "hidden";
       });
     </script>
