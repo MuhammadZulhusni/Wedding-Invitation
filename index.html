@@ -238,21 +238,32 @@
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
+      <!-- Container to hold the gallery content -->
       <div class="container">
+        <!-- Row for the gallery title and description, centered in the middle -->
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
+            <!-- Subtitle and heading for the gallery -->
             <span>Our Memories</span>
             <h2>Gallery</h2>
+            <!-- Description text under the heading -->
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, itaque?</p>
           </div>
         </div>
 
+        <!-- Row for the gallery images, with responsive column classes -->
+        <!-- The column classes control how many images are displayed per row based on screen size -->
         <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
+          <!-- Individual gallery item, repeated for each image -->
           <div class="col mt-3">
+            <!-- Anchor tag for lightbox effect, linking to a larger version of the image -->
             <a href="https://picsum.photos/id/300/1200/768" data-toggle="lightbox" data-caption="1" data-gallery="mygallery">
+              <!-- Image thumbnail, set to be fluid, full width, and rounded -->
               <img src="https://picsum.photos/id/300/300/400" alt="1" class="img-fluid w-100 rounded" />
             </a>
           </div>
+
+          <!-- Repeat for each gallery item, changing the image source, caption, and lightbox attributes -->
           <div class="col mt-3">
             <a href="https://picsum.photos/id/300/1200/768" data-toggle="lightbox" data-caption="2" data-gallery="mygallery">
               <img src="https://picsum.photos/id/300/300/400" alt="2" class="img-fluid w-100 rounded" />
